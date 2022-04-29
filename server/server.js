@@ -3,7 +3,9 @@ const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(express.static('../client/dist'));
+const distPath = __dirname + '/../client/dist';
+console.log(distPath);
+app.use(express.static(distPath));
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
